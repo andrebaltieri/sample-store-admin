@@ -1,0 +1,22 @@
+<h3 class="text-center">Edição do Produto</h3>
+
+<form [formGroup]="form" novalidate>
+  <div class="form-group" [ngClass]="{'has-error': (!form.controls.title.valid && !form.controls.title.pristine)}">
+    <label for="">Título</label>
+    <input type="text" class="form-control" placeholder="Título" formControlName="title">
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': (!form.controls.price.valid && !form.controls.price.pristine)}">
+    <label for="">Preço</label>
+    <input type="text" class="form-control" placeholder="Preço" formControlName="price">
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': (!form.controls.image.valid && !form.controls.image.pristine)}">
+    <label for="">Imagem</label>
+    <input type="text" class="form-control" placeholder="Imagem" formControlName="image">
+  </div>
+
+  <p class="text-right">
+    <button class="btn btn-success btn-block btn-lg" (click)="submit()" [disabled]="!form.valid">SALVAR</button>
+  </p>
+</form>

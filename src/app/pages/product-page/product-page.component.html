@@ -1,0 +1,27 @@
+<h3 class="text-center">Produtos</h3>
+<a routerLink="/products/add" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> ADICIONAR</a>
+<br>
+<hr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Curso</th>
+            <th class="text-center">Preço</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td class="text-center"><img src="{{ product.image }}" alt="{{ product.title }}" width="32"></td>
+            <td class="text-center">{{ product.title }}</td>
+            <td class="text-center">{{ product.price | currency:'BRL':false }}</td>
+            <td class="text-center">
+                <div class="btn-group">
+                    <a routerLink="/products/edit/{{ product.id }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                    <button class="btn btn-danger btn-sm" (click)="remove(product)"><i class="fa fa-remove"></i></button>                    
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

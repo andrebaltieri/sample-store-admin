@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/products"><img src="assets/icon.png" width="28" alt="Balta Store"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="nav-menu">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/products"><i class="fa fa-list"></i>&nbsp; Produtos</a></li>
+        <li><a routerLink="/cart"><i class="fa fa-shopping-cart"></i>&nbsp;Carrinho&nbsp;<span class="badge bg-danger">{{ totalItems }}</span></a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/profile"><i class="fa fa-user"></i>&nbsp;Olá <strong>{{ username }}</strong></a></li>
+        <li><a href="" (click)="logout()"><i class="fa fa-power-off"></i>&nbsp;Sair</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
